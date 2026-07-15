@@ -1,14 +1,5 @@
 {
     "appointments": {
-        "business_types": {
-            "appointment_id": "Identifier",
-            "patient_id": "Identifier",
-            "doctor_id": "Identifier",
-            "appointment_date": "Date",
-            "appointment_time": "Text",
-            "reason_for_visit": "Category",
-            "status": "Category"
-        },
         "dataset_name": "appointments.csv",
         "rows": 200,
         "columns": 7,
@@ -30,6 +21,96 @@
             "reason_for_visit": "str",
             "status": "str"
         },
+        "business_types": {
+            "appointment_id": "Identifier",
+            "patient_id": "Identifier",
+            "doctor_id": "Identifier",
+            "appointment_date": "Date",
+            "appointment_time": "Text",
+            "reason_for_visit": "Category",
+            "status": "Category"
+        },
+        "semantic_meaning": {
+            "appointment_id": "Appointment Identifier",
+            "patient_id": "Patient Identifier",
+            "doctor_id": "Doctor Identifier",
+            "appointment_date": "Appointment Date",
+            "appointment_time": "Unknown",
+            "reason_for_visit": "Unknown",
+            "status": "Unknown"
+        },
+        "pii_columns": [],
+        "mixed_columns": {},
+        "datatype_consistency": {
+            "appointment_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "patient_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "doctor_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "appointment_date": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "appointment_time": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "reason_for_visit": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "status": {
+                "dtype": "str",
+                "missing_values": 0
+            }
+        },
+        "profile": {
+            "missing_values": {
+                "appointment_id": 0,
+                "patient_id": 0,
+                "doctor_id": 0,
+                "appointment_date": 0,
+                "appointment_time": 0,
+                "reason_for_visit": 0,
+                "status": 0
+            },
+            "missing_percentage": {
+                "appointment_id": 0.0,
+                "patient_id": 0.0,
+                "doctor_id": 0.0,
+                "appointment_date": 0.0,
+                "appointment_time": 0.0,
+                "reason_for_visit": 0.0,
+                "status": 0.0
+            },
+            "duplicate_rows": 0,
+            "unique_values": {
+                "appointment_id": 200,
+                "patient_id": 48,
+                "doctor_id": 10,
+                "appointment_date": 158,
+                "appointment_time": 40,
+                "reason_for_visit": 5,
+                "status": 4
+            },
+            "cardinality": {
+                "appointment_id": "High",
+                "patient_id": "Medium",
+                "doctor_id": "Low",
+                "appointment_date": "High",
+                "appointment_time": "Medium",
+                "reason_for_visit": "Low",
+                "status": "Low"
+            },
+            "statistics": {}
+        },
         "memory_usage_bytes": 78145,
         "duplicate_rows": 0,
         "missing_values": {
@@ -43,15 +124,6 @@
         }
     },
     "billing": {
-        "business_types": {
-            "bill_id": "Identifier",
-            "patient_id": "Identifier",
-            "treatment_id": "Identifier",
-            "bill_date": "Date",
-            "amount": "Numeric",
-            "payment_method": "Category",
-            "payment_status": "Category"
-        },
         "dataset_name": "billing.csv",
         "rows": 200,
         "columns": 7,
@@ -73,6 +145,107 @@
             "payment_method": "str",
             "payment_status": "str"
         },
+        "business_types": {
+            "bill_id": "Identifier",
+            "patient_id": "Identifier",
+            "treatment_id": "Identifier",
+            "bill_date": "Date",
+            "amount": "Numeric",
+            "payment_method": "Category",
+            "payment_status": "Category"
+        },
+        "semantic_meaning": {
+            "bill_id": "Billing Identifier",
+            "patient_id": "Patient Identifier",
+            "treatment_id": "Treatment Identifier",
+            "bill_date": "Billing Date",
+            "amount": "Billing Amount",
+            "payment_method": "Unknown",
+            "payment_status": "Unknown"
+        },
+        "pii_columns": [],
+        "mixed_columns": {},
+        "datatype_consistency": {
+            "bill_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "patient_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "treatment_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "bill_date": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "amount": {
+                "dtype": "float64",
+                "missing_values": 0
+            },
+            "payment_method": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "payment_status": {
+                "dtype": "str",
+                "missing_values": 0
+            }
+        },
+        "profile": {
+            "missing_values": {
+                "bill_id": 0,
+                "patient_id": 0,
+                "treatment_id": 0,
+                "bill_date": 0,
+                "amount": 0,
+                "payment_method": 0,
+                "payment_status": 0
+            },
+            "missing_percentage": {
+                "bill_id": 0.0,
+                "patient_id": 0.0,
+                "treatment_id": 0.0,
+                "bill_date": 0.0,
+                "amount": 0.0,
+                "payment_method": 0.0,
+                "payment_status": 0.0
+            },
+            "duplicate_rows": 0,
+            "unique_values": {
+                "bill_id": 200,
+                "patient_id": 48,
+                "treatment_id": 200,
+                "bill_date": 158,
+                "amount": 200,
+                "payment_method": 3,
+                "payment_status": 3
+            },
+            "cardinality": {
+                "bill_id": "High",
+                "patient_id": "Medium",
+                "treatment_id": "High",
+                "bill_date": "High",
+                "amount": "High",
+                "payment_method": "Low",
+                "payment_status": "Low"
+            },
+            "statistics": {
+                "amount": {
+                    "count": 200.0,
+                    "mean": 2756.2492500000003,
+                    "std": 1298.1253076474206,
+                    "min": 534.03,
+                    "25%": 1563.4125000000001,
+                    "50%": 2828.165,
+                    "75%": 3836.6274999999996,
+                    "max": 4973.63
+                }
+            }
+        },
         "memory_usage_bytes": 67718,
         "duplicate_rows": 0,
         "missing_values": {
@@ -86,16 +259,6 @@
         }
     },
     "doctors": {
-        "business_types": {
-            "doctor_id": "Identifier",
-            "first_name": "Name",
-            "last_name": "Name",
-            "specialization": "Category",
-            "phone_number": "Phone",
-            "years_experience": "Numeric",
-            "hospital_branch": "Category",
-            "email": "Email"
-        },
         "dataset_name": "doctors.csv",
         "rows": 10,
         "columns": 8,
@@ -119,6 +282,132 @@
             "hospital_branch": "str",
             "email": "str"
         },
+        "business_types": {
+            "doctor_id": "Identifier",
+            "first_name": "Name",
+            "last_name": "Name",
+            "specialization": "Category",
+            "phone_number": "Phone",
+            "years_experience": "Numeric",
+            "hospital_branch": "Category",
+            "email": "Email"
+        },
+        "semantic_meaning": {
+            "doctor_id": "Doctor Identifier",
+            "first_name": "Person Name",
+            "last_name": "Person Name",
+            "specialization": "Unknown",
+            "phone_number": "Phone Number",
+            "years_experience": "Unknown",
+            "hospital_branch": "Unknown",
+            "email": "Email Address"
+        },
+        "pii_columns": [
+            "first_name",
+            "last_name",
+            "phone_number",
+            "email"
+        ],
+        "mixed_columns": {},
+        "datatype_consistency": {
+            "doctor_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "first_name": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "last_name": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "specialization": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "phone_number": {
+                "dtype": "int64",
+                "missing_values": 0
+            },
+            "years_experience": {
+                "dtype": "int64",
+                "missing_values": 0
+            },
+            "hospital_branch": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "email": {
+                "dtype": "str",
+                "missing_values": 0
+            }
+        },
+        "profile": {
+            "missing_values": {
+                "doctor_id": 0,
+                "first_name": 0,
+                "last_name": 0,
+                "specialization": 0,
+                "phone_number": 0,
+                "years_experience": 0,
+                "hospital_branch": 0,
+                "email": 0
+            },
+            "missing_percentage": {
+                "doctor_id": 0.0,
+                "first_name": 0.0,
+                "last_name": 0.0,
+                "specialization": 0.0,
+                "phone_number": 0.0,
+                "years_experience": 0.0,
+                "hospital_branch": 0.0,
+                "email": 0.0
+            },
+            "duplicate_rows": 0,
+            "unique_values": {
+                "doctor_id": 10,
+                "first_name": 6,
+                "last_name": 6,
+                "specialization": 3,
+                "phone_number": 10,
+                "years_experience": 8,
+                "hospital_branch": 3,
+                "email": 10
+            },
+            "cardinality": {
+                "doctor_id": "Low",
+                "first_name": "Low",
+                "last_name": "Low",
+                "specialization": "Low",
+                "phone_number": "Low",
+                "years_experience": "Low",
+                "hospital_branch": "Low",
+                "email": "Low"
+            },
+            "statistics": {
+                "phone_number": {
+                    "count": 10.0,
+                    "mean": 7919715744.2,
+                    "std": 1142889978.7311196,
+                    "min": 6176383634.0,
+                    "25%": 6792438372.5,
+                    "50%": 8269751636.5,
+                    "75%": 8937721687.0,
+                    "max": 9118538547.0
+                },
+                "years_experience": {
+                    "count": 10.0,
+                    "mean": 21.5,
+                    "std": 6.75359986311827,
+                    "min": 5.0,
+                    "25%": 19.5,
+                    "50%": 23.5,
+                    "75%": 26.0,
+                    "max": 28.0
+                }
+            }
+        },
         "memory_usage_bytes": 3897,
         "duplicate_rows": 0,
         "missing_values": {
@@ -133,19 +422,6 @@
         }
     },
     "patients": {
-        "business_types": {
-            "patient_id": "Identifier",
-            "first_name": "Name",
-            "last_name": "Name",
-            "gender": "Category",
-            "date_of_birth": "Date",
-            "contact_number": "Phone",
-            "address": "Address",
-            "registration_date": "Date",
-            "insurance_provider": "Insurance",
-            "insurance_number": "Insurance",
-            "email": "Email"
-        },
         "dataset_name": "patients.csv",
         "rows": 50,
         "columns": 11,
@@ -175,6 +451,155 @@
             "insurance_number": "str",
             "email": "str"
         },
+        "business_types": {
+            "patient_id": "Identifier",
+            "first_name": "Name",
+            "last_name": "Name",
+            "gender": "Category",
+            "date_of_birth": "Date",
+            "contact_number": "Phone",
+            "address": "Address",
+            "registration_date": "Date",
+            "insurance_provider": "Insurance",
+            "insurance_number": "Insurance",
+            "email": "Email"
+        },
+        "semantic_meaning": {
+            "patient_id": "Patient Identifier",
+            "first_name": "Person Name",
+            "last_name": "Person Name",
+            "gender": "Unknown",
+            "date_of_birth": "Birth Date",
+            "contact_number": "Phone Number",
+            "address": "Address",
+            "registration_date": "Registration Date",
+            "insurance_provider": "Insurance Provider",
+            "insurance_number": "Insurance Number",
+            "email": "Email Address"
+        },
+        "pii_columns": [
+            "first_name",
+            "last_name",
+            "contact_number",
+            "address",
+            "insurance_provider",
+            "insurance_number",
+            "email"
+        ],
+        "mixed_columns": {},
+        "datatype_consistency": {
+            "patient_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "first_name": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "last_name": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "gender": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "date_of_birth": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "contact_number": {
+                "dtype": "int64",
+                "missing_values": 0
+            },
+            "address": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "registration_date": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "insurance_provider": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "insurance_number": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "email": {
+                "dtype": "str",
+                "missing_values": 0
+            }
+        },
+        "profile": {
+            "missing_values": {
+                "patient_id": 0,
+                "first_name": 0,
+                "last_name": 0,
+                "gender": 0,
+                "date_of_birth": 0,
+                "contact_number": 0,
+                "address": 0,
+                "registration_date": 0,
+                "insurance_provider": 0,
+                "insurance_number": 0,
+                "email": 0
+            },
+            "missing_percentage": {
+                "patient_id": 0.0,
+                "first_name": 0.0,
+                "last_name": 0.0,
+                "gender": 0.0,
+                "date_of_birth": 0.0,
+                "contact_number": 0.0,
+                "address": 0.0,
+                "registration_date": 0.0,
+                "insurance_provider": 0.0,
+                "insurance_number": 0.0,
+                "email": 0.0
+            },
+            "duplicate_rows": 0,
+            "unique_values": {
+                "patient_id": 50,
+                "first_name": 10,
+                "last_name": 10,
+                "gender": 2,
+                "date_of_birth": 49,
+                "contact_number": 50,
+                "address": 4,
+                "registration_date": 50,
+                "insurance_provider": 4,
+                "insurance_number": 50,
+                "email": 39
+            },
+            "cardinality": {
+                "patient_id": "Medium",
+                "first_name": "Low",
+                "last_name": "Low",
+                "gender": "Low",
+                "date_of_birth": "Medium",
+                "contact_number": "Medium",
+                "address": "Low",
+                "registration_date": "Medium",
+                "insurance_provider": "Low",
+                "insurance_number": "Medium",
+                "email": "Medium"
+            },
+            "statistics": {
+                "contact_number": {
+                    "count": 50.0,
+                    "mean": 7817283317.96,
+                    "std": 957359364.4707395,
+                    "min": 6141951830.0,
+                    "25%": 7065592647.5,
+                    "50%": 7749926855.0,
+                    "75%": 8599947409.5,
+                    "max": 9900972256.0
+                }
+            }
+        },
         "memory_usage_bytes": 29472,
         "duplicate_rows": 0,
         "missing_values": {
@@ -192,14 +617,6 @@
         }
     },
     "treatments": {
-        "business_types": {
-            "treatment_id": "Identifier",
-            "appointment_id": "Identifier",
-            "treatment_type": "Category",
-            "description": "Category",
-            "cost": "Numeric",
-            "treatment_date": "Date"
-        },
         "dataset_name": "treatments.csv",
         "rows": 200,
         "columns": 6,
@@ -218,6 +635,97 @@
             "description": "str",
             "cost": "float64",
             "treatment_date": "str"
+        },
+        "business_types": {
+            "treatment_id": "Identifier",
+            "appointment_id": "Identifier",
+            "treatment_type": "Category",
+            "description": "Category",
+            "cost": "Numeric",
+            "treatment_date": "Date"
+        },
+        "semantic_meaning": {
+            "treatment_id": "Treatment Identifier",
+            "appointment_id": "Appointment Identifier",
+            "treatment_type": "Unknown",
+            "description": "Unknown",
+            "cost": "Treatment Cost",
+            "treatment_date": "Treatment Date"
+        },
+        "pii_columns": [],
+        "mixed_columns": {},
+        "datatype_consistency": {
+            "treatment_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "appointment_id": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "treatment_type": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "description": {
+                "dtype": "str",
+                "missing_values": 0
+            },
+            "cost": {
+                "dtype": "float64",
+                "missing_values": 0
+            },
+            "treatment_date": {
+                "dtype": "str",
+                "missing_values": 0
+            }
+        },
+        "profile": {
+            "missing_values": {
+                "treatment_id": 0,
+                "appointment_id": 0,
+                "treatment_type": 0,
+                "description": 0,
+                "cost": 0,
+                "treatment_date": 0
+            },
+            "missing_percentage": {
+                "treatment_id": 0.0,
+                "appointment_id": 0.0,
+                "treatment_type": 0.0,
+                "description": 0.0,
+                "cost": 0.0,
+                "treatment_date": 0.0
+            },
+            "duplicate_rows": 0,
+            "unique_values": {
+                "treatment_id": 200,
+                "appointment_id": 200,
+                "treatment_type": 5,
+                "description": 3,
+                "cost": 200,
+                "treatment_date": 158
+            },
+            "cardinality": {
+                "treatment_id": "High",
+                "appointment_id": "High",
+                "treatment_type": "Low",
+                "description": "Low",
+                "cost": "High",
+                "treatment_date": "High"
+            },
+            "statistics": {
+                "cost": {
+                    "count": 200.0,
+                    "mean": 2756.2492500000003,
+                    "std": 1298.1253076474206,
+                    "min": 534.03,
+                    "25%": 1563.4125000000001,
+                    "50%": 2828.165,
+                    "75%": 3836.6274999999996,
+                    "max": 4973.63
+                }
+            }
         },
         "memory_usage_bytes": 59176,
         "duplicate_rows": 0,

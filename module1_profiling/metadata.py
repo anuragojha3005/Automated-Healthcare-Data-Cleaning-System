@@ -4,6 +4,11 @@ from pathlib import Path
 from type_inference import TypeInference
 from semantic_detector import SemanticDetector, detect_pii
 
+from mixed_type_detector import MixedTypeDetector
+from mixed_type_detector import datatype_consistency
+
+from profiling_engine import ProfilingEngine
+
 
 class MetadataExtractor:
 
@@ -38,6 +43,17 @@ class MetadataExtractor:
             if detect_pii(column):
                 pii_columns.append(column)
 
+        # Mixed Type Detector
+        mixed_detector = MixedTypeDetector()
+
+        mixed_columns = mixed_detector.detect(self.df)        
+
+        consistency = datatype_consistency(self.df)
+
+        engine = ProfilingEngine()
+
+        profile = engine.profile(self.df)
+
         metadata = {
 
             "dataset_name": self.file_path.name,
@@ -56,6 +72,12 @@ class MetadataExtractor:
 
             "pii_columns": pii_columns,
 
+            "mixed_columns": mixed_columns,
+
+            "datatype_consistency": consistency,
+            
+            "profile": profile,
+
             "memory_usage_bytes": int(self.df.memory_usage(deep=True).sum()),
 
             "duplicate_rows": int(self.df.duplicated().sum()),
@@ -63,5 +85,9 @@ class MetadataExtractor:
             "missing_values": self.df.isnull().sum().to_dict()
 
         }
+
+
+        print("DEBUG")
+        print(metadata)
 
         return metadata
