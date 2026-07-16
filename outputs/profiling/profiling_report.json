@@ -111,6 +111,13 @@
             },
             "statistics": {}
         },
+        "rule_engine": {
+            "pii_columns": [],
+            "suspicious_columns": [],
+            "duplicate_rows": 0,
+            "warnings": [],
+            "data_quality_score": 100
+        },
         "memory_usage_bytes": 78145,
         "duplicate_rows": 0,
         "missing_values": {
@@ -245,6 +252,13 @@
                     "max": 4973.63
                 }
             }
+        },
+        "rule_engine": {
+            "pii_columns": [],
+            "suspicious_columns": [],
+            "duplicate_rows": 0,
+            "warnings": [],
+            "data_quality_score": 100
         },
         "memory_usage_bytes": 67718,
         "duplicate_rows": 0,
@@ -407,6 +421,18 @@
                     "max": 28.0
                 }
             }
+        },
+        "rule_engine": {
+            "pii_columns": [
+                "phone_number",
+                "email",
+                "last_name",
+                "first_name"
+            ],
+            "suspicious_columns": [],
+            "duplicate_rows": 0,
+            "warnings": [],
+            "data_quality_score": 100
         },
         "memory_usage_bytes": 3897,
         "duplicate_rows": 0,
@@ -600,6 +626,21 @@
                 }
             }
         },
+        "rule_engine": {
+            "pii_columns": [
+                "insurance_provider",
+                "contact_number",
+                "insurance_number",
+                "first_name",
+                "last_name",
+                "email",
+                "address"
+            ],
+            "suspicious_columns": [],
+            "duplicate_rows": 0,
+            "warnings": [],
+            "data_quality_score": 100
+        },
         "memory_usage_bytes": 29472,
         "duplicate_rows": 0,
         "missing_values": {
@@ -726,6 +767,13 @@
                     "max": 4973.63
                 }
             }
+        },
+        "rule_engine": {
+            "pii_columns": [],
+            "suspicious_columns": [],
+            "duplicate_rows": 0,
+            "warnings": [],
+            "data_quality_score": 100
         },
         "memory_usage_bytes": 59176,
         "duplicate_rows": 0,

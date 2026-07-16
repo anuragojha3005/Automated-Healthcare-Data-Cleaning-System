@@ -4,6 +4,7 @@ from config import RAW_DATA_DIR, PROFILE_DIR, VISUALIZATION_DIR
 from utils import create_directory
 from metadata import MetadataExtractor
 from visualization import Visualization
+from report_generator import ReportGenerator
 
 
 def main():
@@ -53,8 +54,12 @@ def main():
 
     output_file = PROFILE_DIR / "profiling_report.json"
 
-    with open(output_file, "w", encoding="utf-8") as json_file:
-        json.dump(profiling_report, json_file, indent=4)
+    generator = ReportGenerator()
+
+    generator.save(
+        profiling_report,
+        output_file
+    )
 
     print("\nProfiling Report Generated Successfully.")
     print(f"Saved at : {output_file}")

@@ -9,6 +9,8 @@ from mixed_type_detector import datatype_consistency
 
 from profiling_engine import ProfilingEngine
 
+from rule_engine import RuleEngine
+
 
 class MetadataExtractor:
 
@@ -17,6 +19,10 @@ class MetadataExtractor:
         self.df = pd.read_csv(file_path)
 
     def extract(self):
+
+        rule = RuleEngine()
+
+        rule_report = rule.analyze(self.df)
 
         # Business Type Inference
         inference = TypeInference()
@@ -77,6 +83,8 @@ class MetadataExtractor:
             "datatype_consistency": consistency,
             
             "profile": profile,
+
+            "rule_engine": rule_report,
 
             "memory_usage_bytes": int(self.df.memory_usage(deep=True).sum()),
 
