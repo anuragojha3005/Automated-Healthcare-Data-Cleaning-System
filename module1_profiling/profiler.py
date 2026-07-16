@@ -3,6 +3,7 @@ import json
 from config import RAW_DATA_DIR, PROFILE_DIR, VISUALIZATION_DIR
 from utils import create_directory
 from metadata import MetadataExtractor
+from visualization import Visualization
 
 
 def main():
@@ -17,7 +18,6 @@ def main():
 
     profiling_report = {}
 
-    # Read every CSV file from data/raw
     csv_files = RAW_DATA_DIR.glob("*.csv")
 
     for file in csv_files:
@@ -26,11 +26,34 @@ def main():
 
         extractor = MetadataExtractor(file)
 
+        visual = Visualization()
+
+        df = extractor.df
+
+        # Generate Missing Heatmap
+        visual.missing_heatmap(
+            df,
+            VISUALIZATION_DIR / f"{file.stem}_missing.png"
+        )
+
+        # Generate Correlation Heatmap
+        visual.correlation_heatmap(
+            df,
+            VISUALIZATION_DIR / f"{file.stem}_correlation.png"
+        )
+
+        # Generate Outlier Plot
+        visual.outlier_plot(
+            df,
+            VISUALIZATION_DIR
+        )
+
+        # Generate Metadata Report
         profiling_report[file.stem] = extractor.extract()
 
     output_file = PROFILE_DIR / "profiling_report.json"
 
-    with open(output_file, "w") as json_file:
+    with open(output_file, "w", encoding="utf-8") as json_file:
         json.dump(profiling_report, json_file, indent=4)
 
     print("\nProfiling Report Generated Successfully.")
