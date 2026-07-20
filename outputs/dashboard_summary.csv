@@ -1,0 +1,6 @@
+dataset,original_rows,cleaned_rows,missing_before,missing_after,duplicates_before,duplicates_after,quality_before,quality_after,validation
+appointments.csv,200,200,0,0,0,0,100.0,100.0,[]
+billing.csv,200,200,0,0,0,0,100.0,100.0,"[{'column': 'amount', 'invalid_values': 0}]"
+doctors.csv,10,10,0,0,0,0,100.0,100.0,"[{'column': 'phone_number', 'invalid_phone': 0}, {'column': 'email', 'invalid_email': 0}]"
+patients.csv,50,50,0,0,0,0,100.0,100.0,"[{'column': 'email', 'invalid_email': 0}]"
+treatments.csv,200,200,0,0,0,0,100.0,100.0,"[{'column': 'cost', 'invalid_values': 0}]"

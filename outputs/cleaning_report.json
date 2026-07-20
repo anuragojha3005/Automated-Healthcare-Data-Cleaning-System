@@ -1,0 +1,86 @@
+[
+    {
+        "dataset": "appointments.csv",
+        "original_rows": 200,
+        "cleaned_rows": 200,
+        "missing_before": 0,
+        "missing_after": 0,
+        "duplicates_before": 0,
+        "duplicates_after": 0,
+        "quality_before": 100.0,
+        "quality_after": 100.0,
+        "validation": []
+    },
+    {
+        "dataset": "billing.csv",
+        "original_rows": 200,
+        "cleaned_rows": 200,
+        "missing_before": 0,
+        "missing_after": 0,
+        "duplicates_before": 0,
+        "duplicates_after": 0,
+        "quality_before": 100.0,
+        "quality_after": 100.0,
+        "validation": [
+            {
+                "column": "amount",
+                "invalid_values": 0
+            }
+        ]
+    },
+    {
+        "dataset": "doctors.csv",
+        "original_rows": 10,
+        "cleaned_rows": 10,
+        "missing_before": 0,
+        "missing_after": 0,
+        "duplicates_before": 0,
+        "duplicates_after": 0,
+        "quality_before": 100.0,
+        "quality_after": 100.0,
+        "validation": [
+            {
+                "column": "phone_number",
+                "invalid_phone": 0
+            },
+            {
+                "column": "email",
+                "invalid_email": 0
+            }
+        ]
+    },
+    {
+        "dataset": "patients.csv",
+        "original_rows": 50,
+        "cleaned_rows": 50,
+        "missing_before": 0,
+        "missing_after": 0,
+        "duplicates_before": 0,
+        "duplicates_after": 0,
+        "quality_before": 100.0,
+        "quality_after": 100.0,
+        "validation": [
+            {
+                "column": "email",
+                "invalid_email": 0
+            }
+        ]
+    },
+    {
+        "dataset": "treatments.csv",
+        "original_rows": 200,
+        "cleaned_rows": 200,
+        "missing_before": 0,
+        "missing_after": 0,
+        "duplicates_before": 0,
+        "duplicates_after": 0,
+        "quality_before": 100.0,
+        "quality_after": 100.0,
+        "validation": [
+            {
+                "column": "cost",
+                "invalid_values": 0
+            }
+        ]
+    }
+]
